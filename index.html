@@ -78,17 +78,8 @@
 
 		<script src="examples/js/controls/DeviceOrientationControls.js"></script>
 		<script>
-		var canHandleOrientation=null;
-		if (window.DeviceOrientationEvent) {
-		    window.addEventListener("deviceorientation", handleOrientation, false);
-		}
 
-		function handleOrientation(event){
-		  console.log("Orientation:" + event.alpha + ", " + event.beta + ", " + event.gamma);
-		  canHandleOrientation = event; // will be either null or with event data
-		}
-		
-		if (canHandleOrientation)
+		if ((window.DeviceOrientationEvent) || (window.DeviceMotionEvent))
 		{
 			(function() {
 				  "use strict";
