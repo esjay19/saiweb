@@ -78,8 +78,17 @@
 
 		<script src="examples/js/controls/DeviceOrientationControls.js"></script>
 		<script>
-		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-		if(mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null)
+		var canHandleOrientation=null;
+		if (window.DeviceOrientationEvent) {
+		    window.addEventListener("deviceorientation", handleOrientation, false);
+		}
+
+		function handleOrientation(event){
+		  console.log("Orientation:" + event.alpha + ", " + event.beta + ", " + event.gamma);
+		  canHandleOrientation = event; // will be either null or with event data
+		}
+		
+		if (canHandleOrientation)
 		{
 			(function() {
 				  "use strict";
