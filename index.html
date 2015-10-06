@@ -11,7 +11,7 @@
     <title>ChakraVUE.com</title>
 
 
-
+	
     <!-- Bootstrap Core CSS -->
     <link href="css_style/bootstrap.css" rel="stylesheet">
 
@@ -53,9 +53,6 @@
                 <a href="#services" onclick='$("#menu-close").click();'>Services</a>
             </li>
             <li>
-                <a href="#portfolio" onclick='$("#menu-close").click();'>Work</a>
-            </li>
-            <li>
                 <a href="#contact" onclick='$("#menu-close").click();'>Contact</a>
             </li>
         </ul>
@@ -77,9 +74,82 @@
    <button type="button" class="btn btn-default btn-circle btn-xl">A</button>
 	</div>
 -->
-		<script src="js/build/three.min.js"></script>
+		<script src="build/three.min.js"></script>
 
+		<script src="examples/js/controls/DeviceOrientationControls.js"></script>
 		<script>
+		var canHandleOrientation;
+		if (window.DeviceOrientationEvent) {
+		    window.addEventListener("deviceorientation", handleOrientation, false);
+		}
+
+		function handleOrientation(event){
+		  console.log("Orientation:" + event.alpha + ", " + event.beta + ", " + event.gamma);
+		  canHandleOrientation = event; // will be either null or with event data
+		}
+		
+		if (canHandleOrientation)
+		{
+			(function() {
+				  "use strict";
+
+				  window.addEventListener('load', function() {
+
+						var container, camera, scene, renderer, controls, geometry, mesh;
+
+						var animate = function(){
+
+							window.requestAnimationFrame( animate );
+
+							controls.update();
+							renderer.render(scene, camera);
+
+						};
+
+						container = document.getElementById( 'container' );
+
+						camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
+
+						controls = new THREE.DeviceOrientationControls( camera );
+
+						scene = new THREE.Scene();
+
+						var geometry = new THREE.SphereGeometry( 500, 16, 8 );
+						geometry.scale( - 1, 1, 1 );
+
+						var material = new THREE.MeshBasicMaterial( {
+							map: THREE.ImageUtils.loadTexture( 'images/monks.png' )
+						} );
+
+						var mesh = new THREE.Mesh( geometry, material );
+						scene.add( mesh );
+
+						
+
+						renderer = new THREE.WebGLRenderer();
+						renderer.setPixelRatio( window.devicePixelRatio );
+						renderer.setSize(window.innerWidth, window.innerHeight);
+						renderer.domElement.style.position = 'absolute';
+						renderer.domElement.style.top = 0;
+						container.appendChild(renderer.domElement);
+
+						window.addEventListener('resize', function() {
+
+							camera.aspect = window.innerWidth / window.innerHeight;
+							camera.updateProjectionMatrix();
+							renderer.setSize( window.innerWidth, window.innerHeight );
+
+						}, false);
+
+						animate();
+
+				  }, false);
+
+			})();
+		}
+
+		else
+		{
 
 			var camera, scene, renderer;
 
@@ -323,7 +393,9 @@
 
 			}
 
+		}
 		</script>
+
     </header>
 
     <!-- About -->
@@ -411,65 +483,6 @@
         <!-- /.container -->
     </section>
 
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
-        </div>
-    </aside>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
-                    <hr class="small">
-		<div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <iframe title="vid1" class="youtube-player" src="https://www.youtube.com/embed/1d-hpMej9bQ" frameborder="5"></iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <iframe title="vid2" class="youtube-player" src="https://www.youtube.com/embed/KpFCaovSk2U" frameborder="5"></iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                               <iframe title="vid3" class="youtube-player" src="https://www.youtube.com/embed/9sEWBZZWmco" frameborder="5"></iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <iframe title="vid4" class="youtube-player" src="https://www.youtube.com/embed/bg8uoepX4OI" frameborder="5"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-
-    <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>Keep checking here for new content</h3>
-                    <a href="#" class="btn btn-lg btn-light">Coming soon!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Coming soon!</a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
     <!-- Map -->
     <section id="contact" class="map">
         <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15225.24660068962!2d78.3483098!3d17.444791499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93a2eb620af7%3A0x943fcc66d90e2d8e!2sIIIT%2C+Gachibowli%2C+Hyderabad%2C+Telangana+500032!5e0!3m2!1sen!2sin!4v1442829103832" frameborder="0" height="100%" width="100%"></iframe>
@@ -549,8 +562,4 @@
     });
     </script>
 
-
-
-
 </body></html>
-
