@@ -153,8 +153,7 @@
 			phi = 0, theta = 0;
 			
 			var touchX, touchY;
-			init();
-			animate();
+			
 
 			function init() {
 
@@ -236,7 +235,8 @@
 				window.addEventListener( 'resize', onWindowResize, false );
 
 			}
-
+			init();
+			animate();
 			function onWindowResize() {
 
 				camera.aspect = window.innerWidth / window.innerHeight;
