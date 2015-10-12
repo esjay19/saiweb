@@ -150,10 +150,10 @@
 			var isUserInteracting = false, onMouseDownMouseX = 0, onMouseDownMouseY = 0, lon = 0, onMouseDownLon = 0,lat = 0, onMouseDownLat = 0,phi = 0, theta = 0;
 			
 			var touchX, touchY;
-			
+			init();
 			animate();			
 
-			(function()  {
+			function init  {
 				alert("init works!");
 				var container, mesh;
 
@@ -232,7 +232,7 @@
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
-			})();
+			}
 
 			function onWindowResize() {
 				camera.aspect = window.innerWidth / window.innerHeight;
