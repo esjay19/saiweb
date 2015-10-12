@@ -80,6 +80,7 @@
 		<script>
 
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+
 		{	
 			alert("I am a mobile alert box!");
 			(function() {
@@ -157,7 +158,7 @@
 			animate();			
 
 			function init() {
-
+				alert("init works!");
 				var container, mesh;
 
 				container = document.getElementById( 'container' );
@@ -238,7 +239,7 @@
 			}
 
 			function onWindowResize() {
-
+			alert("onWindowResize runs!");
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
@@ -247,7 +248,7 @@
 			}
 
 			function onDocumentMouseDown( event ) {
-
+				alert("onDocumentMouseDown works!");
 				event.preventDefault();
 
 				isUserInteracting = true;
@@ -353,14 +354,14 @@
 			
 			
 			function animate() {
-
+			alert("animate runs!");
 				requestAnimationFrame( animate );
 				update();
 
 			}
 
 			function update() {
-
+			alert("update runs!");
 				if ( isUserInteracting === false ) {
 
 					lon += 0.1;
