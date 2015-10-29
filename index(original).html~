@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Pramod and Snehil" >
+    <meta name="author" content="Pramod" >
 
     <title>CHAKRAVUE.com</title>
 
 
-
+	
     <!-- Bootstrap Core CSS -->
     <link href="css_style/bootstrap.css" rel="stylesheet">
 
@@ -55,9 +55,6 @@
             <li>
                 <a href="#portfolio" onclick='$("#menu-close").click();'>Work</a>
             </li>
-             <li>
-                <a href="#Team" onclick='$("#menu-close").click();'>Team</a>
-            </li>
             <li>
                 <a href="#contact" onclick='$("#menu-close").click();'>Contact</a>
             </li>
@@ -67,42 +64,41 @@
     <!-- Header -->
     <header id="top" class="header">
 		<div id="container"></div>
-
+ 
 <div style="width:100%;height:50%;top:50%;position:absolute;vertical-align:middle;text-align:center;frame-width=5px;">
-			<h1 style="color:#E5E4E2" >CHAKRAVUE</h1>
-			<h2 style="color:#E5E4E2">VIRTUAL REALITY Media Production</h2>
+			<h1 style="color:E5E4E2" >CHAKRAVUE</h1>
+			<h2 style="color:E5E4E2">VIRTUAL REALITY Media Production</h2>
+</div>
+<!--		
+      <div style="width:100%;height:50%;top:50%;position:absolute;vertical-align:middle;text-align:center;">
+			<a href="#" class="ghost-button">Ghost Button</a>
+  
+  <button type="button" class="btn btn-default btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+   <button type="button" class="btn btn-default btn-circle btn-xl">A</button>
+	</div>
+-->
+		<script src="build/three.min.js"></script>
 
-        </div>
-<!---
-    <div style="width:100%;height:50%;top:50%;position:absolute;">
-
-    <button type="button" class="btn btn-default btn-circle btn-xl" style=" left:10px;position;absolute;background-color:Transparent;" onclick="prevImage()">PREV</button>
-    <button type="button" class="btn btn-default btn-circle btn-xl" style=" right:10px;position:absolute;background-color:Transparent;" onclick="nextImage()">NEXT</button>
-
-    </div>
-
-	--->
-    <script src="build/three.min.js"></script>
-
-		<script src="build/DeviceOrientationControls.js"></script>
+		<script src="examples/js/controls/DeviceOrientationControls.js"></script>
 		<script type="text/javascript">
 		var isMobile=false;
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 		{
 			isMobile=true;
 		}
-
-
+		
+		
 
 			var camera, scene, renderer;
 
 			var isUserInteracting = false, onMouseDownMouseX = 0, onMouseDownMouseY = 0, lon = 0, onMouseDownLon = 0,lat = 0, onMouseDownLat = 0,phi = 0, theta = 0;
-
+			
 			var touchX, touchY;
+		
 
-             var mesh;
 			function init(){
-				var container;
+				alert("init works!");
+				var container, mesh;
 
 				container = document.getElementById( 'container' );
 
@@ -115,11 +111,11 @@
 				geometry.applyMatrix( new THREE.Matrix4().makeScale( -1, 1, 1 ) );
 
 				var material = new THREE.MeshBasicMaterial( {
-					map: THREE.ImageUtils.loadTexture( 'images/0.png' )
+					map: THREE.ImageUtils.loadTexture( 'images/trial1.png' )
 				} );
 
 				mesh = new THREE.Mesh( geometry, material );
-
+				
 				scene.add( mesh );
 
 				renderer = new THREE.WebGLRenderer();
@@ -130,12 +126,12 @@
 				document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 				document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-				//document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
-				//document.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false);
+				document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
+				document.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false);
 				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
 				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 				document.addEventListener( 'touchend', onDocumentTouchEnd, false );
-
+				
 
 				//
 
@@ -207,7 +203,7 @@
 				var touch = event.touches[ 0 ];
 				touchX = touch.pageX;
 				touchY = touch.pageY;
-
+				
 				onTouchDownLon = lon;
 				onTouchDownLat = lat;
 			}
@@ -221,14 +217,14 @@
 				}
 
 			}
-
+			
 			function onDocumentTouchMove( event ) {
 				//event.preventDefault();
 					var touch = event.touches[ 0 ];
 					if ( isUserInteracting === true ) {
 					lon = ( touchX - touch.pageX ) * 0.1 + onTouchDownLon;
 					lat = ( touch.pageY - touchY ) * 0.1 + onTouchDownLat;
-
+					
 
 				}
 				/*
@@ -244,7 +240,7 @@
 				isUserInteracting = false;
 
 			}
-
+			
 			function onDocumentTouchEnd( event ) {
 
 				isUserInteracting = false;
@@ -262,11 +258,11 @@
 				onPointerDownLon = lon;
 				onPointerDownLat = lat;
 			}*/
+			
+			
+			
+			
 
-
-
-
-			/*
 			function onDocumentMouseWheel( event ) {
 
 				// WebKit
@@ -292,9 +288,8 @@
 				camera.updateProjectionMatrix();
 
 			}
-			*/
-
-
+			
+			
 			function animate() {
 				requestAnimationFrame( animate );
 				update();
@@ -326,74 +321,21 @@
 				renderer.render( scene, camera );
 
 			}
-
-        var imgarr = imgarr=["images/0.png","images/1.png","images/2.png"];
-        var n=3;
-        var imgloc=0;
-        var myVar = setInterval(slideShow, 5000);
-        function slideShow()
-        {
-            nextImage();
-        }
-
-        function changeImage(val)
-        {
-            mesh.material.map.dispose();
-            mesh.material.map = THREE.ImageUtils.loadTexture( val );
-            mesh.material.needsUpdate = true;
-        }
-        function nextImage()
-        {
-
-            imgloc=(imgloc+1)%n;
-            changeImage(imgarr[imgloc]);
-        }
-
-        function prevImage()
-        {
-            if (imgloc===0)
-            {
-                imgloc=n;
-            }
-            else
-            {
-                imgloc=(imgloc-1);
-            }
-            changeImage(imgarr[imgloc]);
-        }
-
-        var meshmob;
-        var myVarmob = setInterval(slideShowmob, 5000);
-        function slideShowmob()
-        {
-            nextImagemob();
-        }
-        function changeImagemob(val)
-        {
-            meshmob.material.map.dispose();
-            meshmob.material.map = THREE.ImageUtils.loadTexture( val );
-            meshmob.material.needsUpdate = true;
-        }
-        function nextImagemob()
-        {
-
-            imgloc=(imgloc+1)%n;
-            changeImagemob(imgarr[imgloc]);
-        }
-
-		if (!isMobile)
+		if (!isMobile)		
 		{
+			alert("I am a desktop alert box!");
 			init();
-			animate();
+			animate();	
 		}
 		else
-		{
+		{	
+			alert("I am a mobile alert box!");
 			(function() {
 				  "use strict";
 
 				  window.addEventListener('load', function() {
 
-						var container, camera, scene, renderer, controls, geometry;
+						var container, camera, scene, renderer, controls, geometry, mesh;
 
 						var animate = function(){
 
@@ -416,13 +358,13 @@
 						geometry.scale( - 1, 1, 1 );
 
 						var material = new THREE.MeshBasicMaterial( {
-							map: THREE.ImageUtils.loadTexture( 'images/0.png' )
+							map: THREE.ImageUtils.loadTexture( 'images/monks.png' )
 						} );
 
-						meshmob = new THREE.Mesh( geometry, material );
-						scene.add( meshmob );
+						var mesh = new THREE.Mesh( geometry, material );
+						scene.add( mesh );
 
-
+						
 
 						renderer = new THREE.WebGLRenderer();
 						renderer.setPixelRatio( window.devicePixelRatio );
@@ -543,7 +485,7 @@
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
-                            <div text-align="center" class="portfolio-item">
+                            <div text-align:center class="portfolio-item">
                               	<iframe title="video" margin-left: auto margin-right: auto height=100% width=100% class="youtube-player" src="https://www.youtube.com/embed/yONiqJRXNCk" frameborder="5"></iframe>
                             </div>
                         </div>
@@ -557,88 +499,13 @@
         </div>
         <!-- /.container -->
     </section>
-
-    <!--Team -->
-
-    <section id="Team" class="portfolio">
-	 <div class="container" id="previews">
-        <div class="row content-row">
-            <div class="col-lg-12 text-center">
-            <h2>Team</h2>
-                <hr class="small">
-            </div>
-            <div class="col-md-4">
-                <div class="preview-pane" style="vertical-align:middle">
-                    <a >
-                        <img src="images/Rakesh.jpg" class="img-responsive img-centered" style="vertical-align:middle;text-align:center" alt="">
-                         <span style=""><h3>Co-Founder</h3></span>
-
-                        <hr class="colored">
-
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="preview-pane">
-                    <a >
-                        <img src="images/Abhilekh.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Co-Founder</h3>
-                        <hr class="colored">
-
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="preview-pane">
-                    <a >
-                        <img src="images/Vijay_Kumar.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Operations</h3>
-                        <hr class="colored">
-
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="preview-pane">
-                    <a >
-                        <img src="images/Sai_Mulpuru.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Technology</h3>
-                        <hr class="colored">
-
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="preview-pane">
-                    <a >
-                        <img src="images/Matthew_McClure.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Voice</h3>
-                        <hr class="colored">
-
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="preview-pane">
-                    <a >
-                        <img src="images/Tri_Angles.png" class="img-responsive img-centered" alt="">
-                        <h3>Music</h3>
-                        <hr class="colored">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
     <!-- Map -->
     <section id="contact" class="map">
         <iframe id="map" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15225.24660068962!2d78.3483098!3d17.444791499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93a2eb620af7%3A0x943fcc66d90e2d8e!2sIIIT%2C+Gachibowli%2C+Hyderabad%2C+Telangana+500032!5e0!3m2!1sen!2sin!4v1442829103832" frameborder="0" height="100%" width="100%"></iframe>
         <br>
+        
+        
     </section>
-
-
 
     <!-- Footer -->
     <footer>
@@ -688,20 +555,20 @@
     $(document).ready(function () {
 
         $('#map').addClass('scrolloff');                // set the mouse events to none when doc is ready
-
+        
         $('#contact').on("mouseup",function(){          // lock it when mouse up
-            $('#map').addClass('scrolloff');
+            $('#map').addClass('scrolloff'); 
             //somehow the mouseup event doesn't get call...
         });
         $('#contact').on("mousedown",function(){        // when mouse down, set the mouse events free
             $('#map').removeClass('scrolloff');
         });
 
-        $("#map").mouseleave(function () {              // becuase the mouse up doesn't work...
+        $("#map").mouseleave(function () {              // becuase the mouse up doesn't work... 
             $('#map').addClass('scrolloff');            // set the pointer events to none when mouse leaves the map area
                                                         // or you can do it on some other event
         });
-
+        
     });
 </script>
     <!-- Custom Theme JavaScript -->
