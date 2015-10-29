@@ -335,11 +335,29 @@
         {
             nextImage();
         }
+        var mesh1;
         function changeImage(val)
         {
             mesh.material.map.dispose();
             mesh.material.map = THREE.ImageUtils.loadTexture( val );
             mesh.material.needsUpdate = true;
+        }
+        var myVarmob = setInterval(slideShowmob, 5000);
+        function slideShowmob()
+        {
+            nextImagemob();
+        }
+        function changeImagemob(val)
+        {
+            mesh1.material.map.dispose();
+            mesh1.material.map = THREE.ImageUtils.loadTexture( val );
+            mesh1.material.needsUpdate = true;
+        }
+        function nextImagemob()
+        {
+
+            imgloc=(imgloc+1)%n;
+            changeImagemob(imgarr[imgloc]);
         }
         function nextImage()
         {
@@ -347,6 +365,7 @@
             imgloc=(imgloc+1)%n;
             changeImage(imgarr[imgloc]);
         }
+
         function prevImage()
         {
             if (imgloc===0)
@@ -398,8 +417,8 @@
 							map: THREE.ImageUtils.loadTexture( 'images/0.png' )
 						} );
 
-						var mesh = new THREE.Mesh( geometry, material );
-						scene.add( mesh );
+						var mesh1 = new THREE.Mesh( geometry, material );
+						scene.add( mesh1 );
 
 
 
