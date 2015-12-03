@@ -69,8 +69,8 @@
 		<div id="container"></div>
 
 <div style="width:100%;height:50%;top:50%;position:absolute;vertical-align:middle;text-align:center;frame-width=5px;">
-			<h1 style="color:#E5E4E2" >CHAKRAVUE</h1>
-			<h2 style="color:#E5E4E2">VIRTUAL REALITY Media Production</h2>
+    <h1 style="color:#0099CC"><big><big>CHAKRAVUE</big></big></h1>
+			<h3 style="color:#E5E4E2">VIRTUAL REALITY Media Production</h3>
 
         </div>
 <!---
@@ -328,9 +328,9 @@
 			}
 
         var imgarr = imgarr=["images/0.png","images/1.png","images/2.png","images/3.png","images/4.png"];
-        var n=3;
+        var n=5;
         var imgloc=0;
-        var myVar = setInterval(slideShow, 5000);
+        var myVar = setInterval(slideShow, 10000);
         function slideShow()
         {
             nextImage();
@@ -363,7 +363,7 @@
         }
 
         var meshmob;
-        var myVarmob = setInterval(slideShowmob, 5000);
+        var myVarmob = setInterval(slideShowmob, 10000);
         function slideShowmob()
         {
             nextImagemob();
@@ -542,14 +542,17 @@
                     <h2>Our Work</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div text-align="center" class="portfolio-item">
-                              	<iframe title="video" margin-left: auto margin-right: auto height=100% width=100% class="youtube-player" src="https://www.youtube.com/embed/yONiqJRXNCk" frameborder="5"></iframe>
+                        <div class="row-md-6">
+                            <div class="col-md-6">text-align="center" class="portfolio-item">
+                              	<iframe title="video" auto height=100% width=100% class="youtube-player" src="https://www.youtube.com/embed/yONiqJRXNCk" frameborder="5"></iframe>
+                            </div>
+                            <div class="col-md-6">text-align="center" class="portfolio-item">
+                                <iframe title="video" auto height=100% width=100% class="youtube-player" src="https://www.youtube.com/embed/59T7EY-Nhw4" frameborder="5"></iframe>
+                            </div>
                             </div>
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -570,9 +573,9 @@
             <div class="col-md-4">
                 <div class="preview-pane" style="vertical-align:middle">
                     <a >
-                        <img src="images/Rakesh.jpg" class="img-responsive img-centered" style="vertical-align:middle;text-align:center" alt="">
-                         <span style=""><h3>Co-Founder</h3></span>
-
+                        <img src="images/Rakesh.jpg" class="img-responsive img-centered img-circle" style="vertical-align:middle;text-align:center" alt="">
+                         <h3>Rakesh</h3>
+                        <h4>Co-Founder</h4>
                         <hr class="colored">
 
                     </a>
@@ -581,8 +584,9 @@
             <div class="col-md-4">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Abhilekh.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Co-Founder</h3>
+                        <img src="images/Abhilekh.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <h3>Abhilekh</h3>
+                        <h4>Co-Founder</h4>
                         <hr class="colored">
 
                     </a>
@@ -591,8 +595,9 @@
             <div class="col-md-4">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Vijay_Kumar.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Operations</h3>
+                        <img src="images/Vijay_Kumar.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <h3>Vijay</h3>
+                        <h4>Operations</h4>
                         <hr class="colored">
 
                     </a>
@@ -603,8 +608,9 @@
             <div class="col-md-4">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Sai_Mulpuru.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Technology</h3>
+                        <img src="images/Sai_Mulpuru.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <h3>Sai<h3>
+                        <h4>Technology</h4>
                         <hr class="colored">
 
                     </a>
@@ -613,8 +619,9 @@
             <div class="col-md-4">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Matthew_McClure.jpg" class="img-responsive img-centered" alt="">
-                        <h3>Voice</h3>
+                        <img src="images/Matthew_McClure.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <h3>Matthew</h3>
+                        <h4>Voice</h4>
                         <hr class="colored">
 
                     </a>
@@ -623,7 +630,7 @@
             <div class="col-md-4">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Tri_Angles.png" class="img-responsive img-centered" alt="">
+                        <img src="images/Tri_Angles.png" class="img-responsive img-centered img-circle" alt="">
                         <h3>Music</h3>
                         <hr class="colored">
                     </a>
