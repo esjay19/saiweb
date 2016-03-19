@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Pramod and Snehil" >
+    <meta name="author" content="Pramod" >
 
     <title>CHAKRAVUE.com</title>
 
@@ -68,9 +69,11 @@
     <header id="top" class="header">
 		<div id="container"></div>
 
-<div style="width:100%;height:50%;top:50%;position:absolute;vertical-align:middle;text-align:center;frame-width=5px;">
-    <h1 style="color:#0099CC"><big><big>CHAKRAVUE</big></big></h1>
-			<h3 style="color:#E5E4E2">VIRTUAL REALITY Media Production</h3>
+
+<div  id="heading" style="width:100%;height:50%;top:50%;position:absolute;vertical-align:middle;text-align:center;frame-width=5px;">
+    <center><h1  style="color:#0099CC"><big><big>CHAKRAVUE</big></big></h1></center>
+
+			<h3 style="color:#E5E4E2">A Virtual Reality Media Production Company</h3>
 
         </div>
 <!---
@@ -328,7 +331,7 @@
 			}
 
         var imgarr = imgarr=["images/0.png","images/1.png","images/2.png","images/3.png","images/4.png","images/5.png"];
-        var n=6;
+        var n=5;
         var imgloc=0;
         var myVar = setInterval(slideShow, 10000);
         function slideShow()
@@ -445,7 +448,24 @@
 
 			})();
 		}
-
+		
+		
+	       function learnMoreDisplay(id)
+				{
+				    
+				    var e = document.getElementById(id);
+				   
+				    if (e.style.display == 'block' || e.style.display=='')
+    				{
+				        e.style.display = 'none';
+    				}
+				    else 
+			        {
+				        e.style.display = 'block';
+    				}
+				    
+				}
+	     
 		</script>
 
     </header>
@@ -456,7 +476,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Vision</h2>
-                    <p class="lead">We aim at promoting travel, adventure and education internationally through the means of Virtual Reality and 360 degree video tours. We also wish to preserve the heritage, culture and beauty of a place digitally in virtual reality.</p>
+                    <p class="lead">We aim at promoting travel, adventure and education internationally through the means of 360 degree video tours, Virtual Reality apps and games. We also wish to preserve the heritage, culture and beauty of a place digitally in virtual reality.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -474,7 +494,7 @@
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                            <div id="service-item1" class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-video-camera fa-stack-1x text-primary"></i>
@@ -483,8 +503,13 @@
                                     <strong>360 Degree Videos</strong>
                                 </h4>
                                 <p>We shoot 360 degree video footage of your choice</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <a href="javascript:learnMoreDisplay('videoPara')" class="btn btn-light">Learn More</a>
+				<p id="videoPara"  style="display:none;" class="answer_list" >  We provide 360 degree video services with interactive options, immersive audio and narration. Check our portfolio to know more</p>
                             </div>
+			    <script type="javascript" >
+				
+
+</script>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
@@ -496,7 +521,8 @@
                                     <strong>Advertisements</strong>
                                 </h4>
                                 <p>Creating immersive virtual reality advertisements</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <a href="javascript:learnMoreDisplay('adPara')" class="btn btn-light">Learn More</a>
+				<p id="adPara"  style="display:none;" class="answer_list" >  We produce 360 degree advertisements where users spend 6 times more time exploring and understanding your business</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -509,20 +535,22 @@
                                     <strong>Virtual Tours</strong>
                                 </h4>
                                 <p>Guided virtual tours of events, places and heritage sites</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <a href="javascript:learnMoreDisplay('vTourPara')" class="btn btn-light">Learn More</a>
+				<p id="vTourPara"  style="display:none;" class="answer_list" >  We provide interactive guided tours of various places, events where users can choose to visit one location after another, and listen to narration by tour guide</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-pencil fa-stack-1x text-primary"></i>
+                                <i class="fa fa-gamepad fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Training</strong>
+                                    <strong>Virtual Reality Games and Apps</strong>
                                 </h4>
-                                <p>We train VR enthusiasts covering topics from shooting to production</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Stepping into the future</p>
+                                <a href="javascript:learnMoreDisplay('gamesPara')" class="btn btn-light">Learn More</a>
+				<p id="gamesPara"  style="display:none;" class="answer_list" >  We create interactive virtual reality games and apps, that turn your phone into an immersive hands free gaming device. Why play angry birds with your fingers, when you yourself can be one of the birds!</p>
                             </div>
                         </div>
                     </div>
@@ -541,16 +569,36 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>Our Work</h2>
                     <hr class="small">
-                    <div class="row">
-                        <div class="row-md-6">
-                            <div class="col-md-6">text-align="center" class="portfolio-item">
-                              	<iframe title="video" auto height=100% width=100% class="youtube-player" src="https://www.youtube.com/embed/yONiqJRXNCk" frameborder="5"></iframe>
+                    <div class="row" style="margin-top: 30px;margin-bottom: 30px">
+                        <div  class="row-md-6">
+                            <div  class="col-md-6" text-align="center" class="portfolio-item">
+                              	<iframe title="video" width=420px  height=280px class="youtube-player" src="https://www.youtube.com/embed/yONiqJRXNCk" frameborder="5"></iframe>
                             </div>
-                            <div class="col-md-6">text-align="center" class="portfolio-item">
-                                <iframe title="video" auto height=100% width=100% class="youtube-player" src="https://www.youtube.com/embed/59T7EY-Nhw4" frameborder="5"></iframe>
+                            <div class="col-md-6" text-align="center" class="portfolio-item">
+                                <iframe title="video" width="420px"  height="280px" class="youtube-player" src="https://www.youtube.com/embed/59T7EY-Nhw4" frameborder="5"></iframe>
                             </div>
-                            </div>
+                            
+                            	
                         </div>
+			
+									
+                    </div>
+		    			  <div class="row">
+								<div  class="row-md-6">
+										<div class="col-md-6" text-align="center" class="portfolio-item">
+                              	<iframe title="video" width=420px  height=280px class="youtube-player" src="https://www.youtube.com/embed/Pzc6uYVj-M8" frameborder="5"></iframe>
+                            	</div>
+                           	<div class="col-md-6" text-align="center" class="portfolio-item">
+                                <iframe title="video" width="420px"  height="280px" class="youtube-player" src="https://www.youtube.com/embed/MII1OBUhNeI" frameborder="5"></iframe>
+                            	</div>
+			
+			
+								</div>	
+		    			  </div>
+			
+                            
+                       
+                        
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -559,7 +607,7 @@
             <!-- /.row -->
         </div>
         <!-- /.container -->
-    </section>
+    </section>	
 
     <!--Team -->
 
@@ -570,69 +618,70 @@
             <h2>Team</h2>
                 <hr class="small">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 <div class="preview-pane" style="vertical-align:middle">
                     <a >
-                        <img src="images/Rakesh.jpg" class="img-responsive img-centered img-circle" style="vertical-align:middle;text-align:center" alt="">
+                        <img src="images/Rakesh.jpg" class=" img-centered img-circle" style="vertical-align:middle;text-align:center" alt="">
                          <h3>Rakesh</h3>
                         <h4>Co-Founder</h4>
-                        <hr class="colored">
+                        <!--<hr class="colored">-->
 
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Abhilekh.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <img src="images/Abhilekh.jpg" class="img-centered img-circle" alt="">
                         <h3>Abhilekh</h3>
                         <h4>Co-Founder</h4>
-                        <hr class="colored">
+                        <!--<hr class="colored">-->
 
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Vijay_Kumar.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <img src="images/Vijay_Kumar.jpg" class=" img-centered img-circle" alt="">
                         <h3>Vijay</h3>
                         <h4>Operations</h4>
-                        <hr class="colored">
+                        <!--<hr class="colored">-->
 
                     </a>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 <div class="preview-pane">
-                    <a >
-                        <img src="images/Sai_Mulpuru.jpg" class="img-responsive img-centered img-circle" alt="">
-                        <h3>Sai<h3>
+                    <a ><p>
+                        <img src="images/Sai_Mulpuru.jpg" class=" img-centered img-circle""  alt="">
+                        <h3>Sai</h3>
                         <h4>Technology</h4>
-                        <hr class="colored">
-
+                        <!--<hr class="colored">-->
+			</p>
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center" >
                 <div class="preview-pane">
                     <a >
-                        <img src="images/Matthew_McClure.jpg" class="img-responsive img-centered img-circle" alt="">
+                        <img src="images/Matthew_McClure.jpg" class=" img-centered img-circle"  alt="">
                         <h3>Matthew</h3>
                         <h4>Voice</h4>
-                        <hr class="colored">
+                        <!--<hr class="colored">-->
 
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="preview-pane">
+            <div class="col-md-4 text-center">
+                <div  class="preview-pane">
                     <a >
-                        <img src="images/Tri_Angles.png" class="img-responsive img-centered img-circle" alt="">
-                        <h3>Music</h3>
-                        <hr class="colored">
+                        <img src="images/Tri_Angles.png" class=" img-centered img-circle" alt="">
+			<h3>TriAngles</h3>
+                        <h4>Music</h4>
+                        <!--<hr class="colored">-->
                     </a>
                 </div>
             </div>
@@ -652,13 +701,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>ChakraVUE Media</strong>
+		    <img src="images/Chakraview_logo.jpg" height="80" width="100" class=" img-centered "  alt="">
+                    <h4><strong>ChakraVue Media</strong>
                     </h4>
-		<p>1st Floor, Phase 2</p>
-                    <p>KrishnaNagar, Hyderabad - 500073</p>
+		<p>ChakraVue Media, Center for Innovation and Enterpreneurship</p>
+                    <p>International Institute of Information Technology, Gachibowli, Hyderabad, Telangana - 500032</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (+91)-40-23546361</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">chakravuemedia@gmail.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i> +91-7093195052</li>
+			<li><i class="fa fa-phone fa-fw"></i> +91-8019388467</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">info@chakravue.com</a>
                         </li>
                     </ul>
                     <br>
@@ -670,11 +721,12 @@
                             <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="https://dribbble.com/chakravue"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            <a href="https://instagram.com/chakravuemedia"><i class="fa fa-instagram fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
                     <p class="text-muted">Copyright © CHAKRAVUE 2015</p>
+		    <p class="text-muted">Developed by Snehil & Pramod</p>
                 </div>
             </div>
         </div>
@@ -685,7 +737,35 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="css_style/bootstrap.js"></script>
+    
     <style>
+    @font-face {
+    font-family: OCRAStd;
+    src: url(css_style/OCRAStdRegular.ttf);
+    }
+    #heading {
+	 font-family: OCRAStd;
+    }
+    
+    #sai , #mc {
+     border: 1px solid #cc3;
+    }
+    .box {
+  width:530px;
+  height:100px;
+  padding-top:5px;
+  border-style:solid;
+  
+  border-color:#336699;
+  border-width:1px;
+  padding-left:3px;
+  padding-bottom:5px;
+  line-height: 100px;
+  
+  background: rgb(153, 230, 255); /* Fallback for older browsers without RGBA-support */
+  background: rgba(153, 230, 255, 0.5);
+}
+    
     .scrolloff {
         pointer-events: none;
     }
